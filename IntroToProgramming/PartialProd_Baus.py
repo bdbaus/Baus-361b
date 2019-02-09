@@ -69,7 +69,7 @@ def ProdCalcThree(N):
     
     
 print('Here is the partial product for the first 15 terms of the "U_n" sequence:\n')
-ProdCalcThree(15000)
+ProdCalcThree(15)
     
     
     
