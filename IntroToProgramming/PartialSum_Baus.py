@@ -13,7 +13,7 @@ def SumCalcOne(N):
     ResultArray = np.empty([N+1])
     for ii in range(1,N+1):
         temp=(np.log((ii**4)+ii+3))/((np.sqrt(ii))+3)
-        #not using this method print("term",ii,": ",temp)
+        #not using this line print("term",ii,": ",temp)
         ResultArray[ii] = temp
         sum1+=temp
     print("The sum for the first ",N," terms is ",sum1,"\n")
@@ -54,7 +54,7 @@ def SumCalcThree(N):
         ResultArray[ii]=temp
         sum1+=temp
     print("The sum for the first ",N," terms is ",sum1,"\n")
-    print("\n The first 15 terms are ",*ResultArray[:15],sep="\n")
+    print("\n The first 15 terms are ",*ResultArray[1:16],sep="\n")
     print("\n The last 15 terms are ",*ResultArray[-15:],sep="\n")
     
 #########################
