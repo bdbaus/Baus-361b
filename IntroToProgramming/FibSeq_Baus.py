@@ -46,4 +46,11 @@ def cat(n,r):
 #***N MUST BE GREATER THAN R*************
 #PROOF OF CATALAN'S IDENTITY, works with all numbers that satisfy condition
     
-cat(6,4)
+def cas(n):
+    sequence = Fib(0,1,10)
+    term1=(sequence[n-1])*(sequence[n+1])-sequence[n]**2
+    term2=(-1)**n
+    print(term1,"=",term2)
+    
+cat(4,6)
+cas(7)

@@ -33,4 +33,4 @@ def func(x,N):
 
     plt.show()
     
-func(x,1000)
+func(x,10000)
