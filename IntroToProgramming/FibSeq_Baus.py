@@ -39,7 +39,7 @@ def cat(n,r):
     
 def cas(n):
     
-    sequence = Fib(0,1,n)
+    sequence = Fib(1,1,n)
     caslst=[]
     #this is a list of the last 10 terms to prove catalin's identity
     for i in range(n):
