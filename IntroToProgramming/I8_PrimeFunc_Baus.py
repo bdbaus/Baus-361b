@@ -32,5 +32,5 @@ def find_prime(m):
     print(m,"th prime number is ",primelist[-1])
     return(primelist[-1])
     
-    
+#prime_check(10)
 find_prime(10)
