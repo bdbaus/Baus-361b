@@ -29,5 +29,5 @@ def collatz(a0,N):
     
     print(Clist,c)
         
-collatz(6,100)
-        
+collatz(118,10000)
+collatz(119,10000)
