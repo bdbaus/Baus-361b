@@ -14,6 +14,6 @@ def divisors(n):
     
     return divList
 
-print(divisors(100))
+print(divisors(220))
 
 
