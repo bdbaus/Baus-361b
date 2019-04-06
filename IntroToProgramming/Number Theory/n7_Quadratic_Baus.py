@@ -16,7 +16,7 @@ def prime(n):
 
 ##############################
 #ENTER TEST VALUE HERE
-PP = 11
+PP = 17
 #############################
 
 
@@ -68,14 +68,14 @@ neg_one = np.zeros([0,2])
     
 for p in range(PP+1):
     if prime(p):
-        for k in range(0,(PP+1)//2):
-            if ((k**2)%PP) == (p-1):
-                newrow2=(p,True)
-                neg_one = np.vstack([neg_one,newrow2])
-            
-            else:
-                newrow2=(p,False)
-                neg_one = np.vstack([neg_one,newrow2])
+    
+        if p%4 == 1:
+            newrow2=(p,True)
+            neg_one = np.vstack([neg_one,newrow2])
+        
+        else:
+            newrow2=(p,False)
+            neg_one = np.vstack([neg_one,newrow2])
                 
 #NEED TO FIX REPEATS CANT FIGURE HOW TO CHECK FOR REPEATED ELEMENTS
         
