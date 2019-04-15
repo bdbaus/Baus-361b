@@ -11,7 +11,7 @@ import math as m
 
 #Tol = .0001
 
-x0 = 10
+guess = 10
 
 f = lambda x: (1/100)*((x**4)+(np.exp(1)-2-np.sqrt(2))*(x**3)+(2*np.sqrt(2)-np.sqrt(2)*np.exp(1)-3-2*np.exp(1))*(x**2)+(2*np.sqrt(2)*np.exp(1)+3*np.sqrt(2)-3*np.exp(1))*x+(3*np.sqrt(2)*np.exp(1)))
 
@@ -25,28 +25,34 @@ flag = True
 
 #initial iterate
     
-def newton(f,ff,x0,N=100,Tol=.0001):
+def newton(f,ff,guess,N=100,Tol=.0001):
+    
+    x0 = guess
+    tempTol=2*Tol
     
     xlist=[]
+    
     counter = 0
     
-    for i in range(N):
-        
-        if ff(x0)==0:
-            return x0
-        
+    while tempTol > Tol :
+
         x1=x0 - (f(x0)/ff(x0))
         xlist.append(x1)
-        counter+=1
-        
-        p = abs(x1-x0)
-        
-        if p < Tol:
-            break
-        
+        tempTol=abs(x0-x1)
         x0=x1
+        
+        counter+=1
     
-    return x0,xlist,counter
+   
+       
+        
+    print(xlist,counter,"times")
+    return x0
 
-print(newton(f,ff,x0))
-print(newton(g,gg,x0))
+#newton(f,ff,guess)
+roots=newton(f,ff,guess)
+
+print("f(x)=0 when x = %0.4f +/- %0.4f" % (roots,.0001))
+
+roots2=newton(g,gg,guess)
+print("f(x)=0 when x = %0.4f +/- %0.4f" % (roots2,.0001))
