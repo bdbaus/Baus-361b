@@ -5,45 +5,50 @@ Created on Mon Apr 15 12:03:25 2019
 """
 #MUST BE ENTERED IN REVERSE ORDER
 
-p = [-5,4,0,3]
-pointC = 2
+p = [-1,2,-6,2]
+pointC = 4
+a=0
+b=1
 
-#aka = x^3 + 4x -5
+#[-5,4,0,1]
+# = x^3 + 4x -5
 
 pLength = len(p)
 
-def eVal(p,c):
-    final=0
-    for i in range(0,pLength-1):
-        final+= p[i]*c**i
-    return final
-    
-def derive(p):
-    pPrime=[]
-    for i,x in enumerate(p):
-        q=i*x
-        pPrime.append(q)
-    return pPrime[1:]
 
-def dif(p):
-    return [c*(len(p)-i) for i, c in enumerate(p[:-1])]
+def eval2(p,pointC):
+    return sum(pointC ** ((pLength)-i-1) * val for i, val in enumerate(p))
+
+
+def derive(p):
+    return [p[i] * i for i in range(1,pLength)]
 
 #returns list containing elements of p' in reverse
     
     
 def integral(p,a,b):
-    p=p
-    for i,p in enumerate(reversed(p)):
-        return sum(p/(i+1))
+    final=0
+    denom=float(pLength)
+    for i in p:
+        final += i/denom
+        denom -= 1
+    return final
+
+def integral2(p,a,b):
+    return sum(pVal / (i+1) for i, pVal in enumerate(reversed(p)))
     
     
-pc=eVal(p,pointC)
+pc=eval2(p,pointC)
 
-p_prime=dif(p)
+p_prime=derive(p)
 
-p_primec=eVal(p_prime,pointC)
+p_primec=eval2(p_prime,pointC)
 
-print(p_prime)
-#print(integral(p,0,1))
+p_integrated=integral2(p,a,b)
+
+print(pc,"is the function evaluated at ",pointC)
+print(p_prime,"is the coefficients of the derivative (such that the last element has the highest exponent)")
+print(p_primec,"is the derivative evaluated at",pointC)
+print(p_integrated,"is the definite integral of",p,"from",a,"to",b)
     
     
