@@ -5,7 +5,7 @@ Created on Mon Mar 25 12:10:16 2019
 """
 
 #ask for Zm
-m=9
+m=11
 
 Flist = []
 
@@ -21,4 +21,5 @@ for z in range(1,m):
 print("The ",len(Flist)-1," multiplicative inverses in Z",m," (excluding the identity [1,1] are \n",Flist[1:])
             
             
-            
+# of the numbers between 1 and M, if the gcd between value and M is 1, then its an inverse, otherwise not?
+# all values relatively prime to M, have inverses. 

@@ -14,10 +14,8 @@ def prime(n):
     else:
         return False
 
-##############################
-#ENTER TEST VALUE HERE
-PP = 17
-#############################
+PP = 11
+
 
 
 def qr(p):
@@ -63,23 +61,21 @@ else:
             
             print(count)
  
-    
 neg_one = np.zeros([0,2])  
     
 for p in range(PP+1):
     if prime(p):
-    
-        if p%4 == 1:
-            newrow2=(p,True)
-            neg_one = np.vstack([neg_one,newrow2])
-        
-        else:
-            newrow2=(p,False)
-            neg_one = np.vstack([neg_one,newrow2])
-                
-#NEED TO FIX REPEATS CANT FIGURE HOW TO CHECK FOR REPEATED ELEMENTS
-            #fixed by using legendres theorem instead of triple for loop
+        for k in range(0,(PP+1)//2):
+            if ((k**2)%PP) == (p-1):
+                newrow2=(p,True)
+                neg_one = np.vstack([neg_one,newrow2])
             
+            else:
+                newrow2=(p,False)
+                neg_one = np.vstack([neg_one,newrow2])
+                
+        
+        
         
 print("\n -1 in Z (mod",PP,")")
 print("If a 1 appears once in the right column, the corresponding number to the left will have -1 as a quadratic residue.")
