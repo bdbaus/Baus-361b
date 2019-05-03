@@ -28,8 +28,10 @@ def possible(m, n): #r is length of tile (2,3,4) and n is N slots
             print("x is greater than m")
    #when x reaches the length it makes the x index = that value + value of index[x-r]
             possible[x] += possible[x-m]
-            print(possible)
-            print("possible[]",x,"is",possible[x])
+            
+#            print(possible)
+#            print("possible[]",x,"is",possible[x])
+            
     return possible[x] - 1
     
     
